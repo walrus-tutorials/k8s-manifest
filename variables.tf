@@ -4,12 +4,6 @@ variable "manifest_url" {
   default = ""
 }
 
-variable "namespace" {
-  type        = string
-  description = "Namespace to deploy. Auto-generated if empty."
-  default     = ""
-}
-
 variable "wait_for_rollout" {
   type = bool
   description = "Wait or not for Deployments and APIService to complete rollout."
