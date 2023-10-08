@@ -1,9 +1,10 @@
 data "http" "manifest_file" {
-  url = var.manifest_url
+  count = var.source_type == "http" ? 1 : 0
+  url = var.http_url
 }
 
 data "kubectl_file_documents" "manifest_doc" {
-  content = data.http.manifest_file.body
+  content = var.source_type == "http" ? data.http.manifest_file.0.response_body : yamlencode(var.yaml_manifest)
 }
 
 resource "kubectl_manifest" "manifest" {
