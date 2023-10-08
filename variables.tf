@@ -32,8 +32,8 @@ variable "wait_for_rollout" {
 }
 
 # @hidden
-variable "seal_metadata_namespace_name" {
+variable "walrus_metadata_namespace_name" {
   type        = string
-  description = "Seal metadata namespace name."
+  description = "Walrus metadata namespace name."
   default     = ""
 }
