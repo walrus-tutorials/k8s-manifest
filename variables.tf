@@ -19,7 +19,7 @@ variable "http_url" {
 # @label "YAML Manifest"
 # @show_if "source_type=yaml"
 variable "yaml_manifest" {
-  type = map(any)
+  type = any
   description = "Manifest in YAML format"
   default = {}
 }
